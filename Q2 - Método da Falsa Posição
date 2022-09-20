@@ -1,0 +1,23 @@
+import math
+
+def f(x):
+    return(-0.4*x**2 + 2.2*x + 4.7)
+
+tol = 0.01
+cont = 0
+a = 5
+b = 10
+c = b - a
+xl = (a*f(b) - b*f(a))/(f(b) - f(a))
+print(f'k: {cont+1}; a: {a:.6f}; fa: {f(a):.6f}; b: {b:.6F}; fb: {f(b):.6f}; xl: {xl:.6f}; fxl: {f(xl):.6f}')
+
+for i in range(1, 11):
+    if(f(a)*f(xl) < 0.0):
+        b = xl
+    if(f(a)*f(xl) > 0.0):
+        a = xl
+    
+    print(f'k: {i}; a: {a:.6f}; fa: {f(a):.6f}; b: {b:.6F}; fb: {f(b):.6f}; xl: {xl:.6f}; fxl: {f(xl):.6f}')
+
+    c = b - a
+    xl = (a*f(b) - b*f(a))/(f(b) - f(a))
