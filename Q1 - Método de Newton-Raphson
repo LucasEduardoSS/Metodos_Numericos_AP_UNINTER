@@ -1,0 +1,16 @@
+import math
+
+def f(x):
+    return -0.4*x**2 + 2.2*x + 4.7
+
+def f_l(x):
+    return -0.8*x + 2.25
+
+def Newton_Raphson(x0, nI):
+    iteração = 0
+    while iteração < nI:
+        x1 = x0 - f(x0)/f_l(x0)
+        x0 = x1
+        print(f'k: {iteração+1:<4}; xk-1: {x0:.6f}; xk: {x1:.6f}; f(xk): {f(x1):.6f}') 
+        iteração += 1
+Newton_Raphson(5, 10) 
