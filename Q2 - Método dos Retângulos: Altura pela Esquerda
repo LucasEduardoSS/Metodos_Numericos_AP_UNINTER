@@ -1,0 +1,16 @@
+import math
+
+n = 9
+a = 0
+b = 3
+s = []
+passo = (b - a)/n
+
+def f(x):
+    return x * 2.71828182**x
+
+for i in range(0, n+1):
+    print(f'x{i}; x: {a:.6f}; f(x): {math.fabs(f(a)):.6f}')
+    s.append(math.fabs(f(a)))
+    a += passo
+print('Resultado:', (sum(s[0:-1]) * passo))
