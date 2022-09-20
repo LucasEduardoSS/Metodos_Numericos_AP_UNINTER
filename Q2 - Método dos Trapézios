@@ -1,0 +1,19 @@
+import math
+
+n = 9
+a = 0
+b = 3
+s = []
+passo = (b - a)/n
+
+def f(x):
+    return x * 2.71828182**x
+
+for i in range(0, n+1):
+    print(f'x{i}; x: {a:.6f}; f(x): {math.fabs(f(a)):.6f}')
+    if i in [0, n]:
+        s.append(math.fabs(f(a)))
+    else:
+        s.append(2*math.fabs(f(a)))
+    a += passo
+print('Area da funcao:', (sum(s) * passo)/2)
