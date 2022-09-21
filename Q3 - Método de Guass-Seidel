@@ -1,0 +1,44 @@
+xInicial = x10 = x20 = x30 = 0
+iteracao = 1
+
+def modulo(x):
+    return (x**2)**0.5
+
+def x1(x2, x3):
+    return (9 + 2*x2 - x3)/5
+
+def x2(x1, x3):
+    return (-3 - x1 + x3)/2
+
+def x3(x1, x2):
+    return (6 + x2 + x1)/3
+
+x11 = x1(xInicial, xInicial)
+x21 = x2(xInicial, xInicial)
+x31 = x3(xInicial, xInicial)
+
+errox1 = modulo(x11 - x10)
+errox2 = modulo(x21 - x20)
+errox3 = modulo(x31 - x30)
+
+print(f'iteração {iteracao}: ')
+print(f'x1: {x11}; x2: {x21}; x3: {x31}.')
+print(f'ex1: {errox1:.6f}; ex2: {errox2:.6f}; ex3: {errox3:.6f}.\n')
+
+for i in range(9):
+    x10 = x11
+    x20 = x21
+    x30 = x31
+
+    x11 = x1(x20, x30)
+    x21 = x2(x11, x30)
+    x31 = x3(x11, x21)
+
+    errox1 = modulo(x11 - x10)
+    errox2 = modulo(x21 - x20)
+    errox3 = modulo(x31 - x30)
+
+    iteracao += 1
+    print(f'iteração {iteracao}: ')
+    print(f'x1: {x11:.6f}; x2: {x21:.6f}; x3: {x31:.6f}.')
+    print(f'ex1: {errox1:.6f}; ex2: {errox2:.6f}; ex3: {errox3:.6f}.\n')
