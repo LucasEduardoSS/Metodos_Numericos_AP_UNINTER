@@ -23,7 +23,7 @@ errox3 = modulo(x31 - x30)
 
 print(f'iteração {iteracao}: ')
 print(f'x1: {x11}; x2: {x21}; x3: {x31}.')
-print(f'ex1: {ex1:.6f}; ex2: {ex2:.6f}; ex3: {ex3:.6f}.\n')
+print(f'ex1: {errox1:.6f}; ex2: {errox2:.6f}; ex3: {errox3:.6f}.\n')
 
 for i in range(9):
     x10 = x11
@@ -41,4 +41,4 @@ for i in range(9):
     iteracao += 1
     print(f'iteração {iteracao}: ')
     print(f'x1: {x11:.6f}; x2: {x21:.6f}; x3: {x31:.6f}.')
-    print(f'ex1: {ex1:.6f}; ex2: {ex2:.6f}; ex3: {ex3:.6f}.\n')
+    print(f'ex1: {errox1:.6f}; ex2: {errox2:.6f}; ex3: {errox3:.6f}.\n')
